@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ctl_institucion extends Model
 {
     use HasFactory;
-    protected $table="institucion";
+    protected $table="ctl_institucion";
 
     protected $fillable=[
         'nombre',

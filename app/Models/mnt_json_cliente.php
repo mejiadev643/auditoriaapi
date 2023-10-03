@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class mnt_json_cliente extends Model
 {
     use HasFactory;
+    protected $casts = [
+        'json' => 'array',
+    ];
     protected $table="mnt_json_cliente";
 
     protected $fillable=[

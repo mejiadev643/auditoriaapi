@@ -12,7 +12,8 @@ class CtlTipoBitacoraController extends Controller
      */
     public function index()
     {
-        //
+        $tipo_bitacoras = ctl_tipo_bitacora::all();
+        return response()->json(["tipo_bitacoras" => $tipo_bitacoras, "mensaje" => "Exito"], 200);
     }
 
     /**
@@ -28,7 +29,15 @@ class CtlTipoBitacoraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+            $this->validate($request, [
+                'nombre' => 'required',
+            ]);
+            $tipo_bitacora = new ctl_tipo_bitacora();
+            $tipo_bitacora->nombre = $request->nombre;
+            $tipo_bitacora->save();
+
+            return response()->json(["mensaje" => "Se creo con exito"], 200);
     }
 
     /**
@@ -50,16 +59,32 @@ class CtlTipoBitacoraController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ctl_tipo_bitacora $ctl_tipo_bitacora)
+    public function update(Request $request, $id)
     {
-        //
+       try {
+            $this->validate($request, [
+                'nombre' => 'required',
+            ]);
+            $tipo_bitacora = ctl_tipo_bitacora::find($id);
+            $tipo_bitacora->nombre = $request->nombre;
+            $tipo_bitacora->save();
+            return response()->json(["mensaje" => "Se actualizo con exito"], 200);
+        } catch (\Throwable $th) {
+            return response()->json(["mensaje" => "Error en la actualizacion ", $th->getMessage()], 500);
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ctl_tipo_bitacora $ctl_tipo_bitacora)
+    public function destroy($id)
     {
-        //
+       try {
+            $tipo_bitacora = ctl_tipo_bitacora::find($id);
+            $tipo_bitacora->delete();
+            return response()->json(["mensaje" => "Se elimino con exito"], 200);
+        } catch (\Throwable $th) {
+            return response()->json(["mensaje" => "Error en la eliminacion ", $th->getMessage()], 500);
+        }
     }
 }

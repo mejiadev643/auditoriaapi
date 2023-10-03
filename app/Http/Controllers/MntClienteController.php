@@ -12,7 +12,8 @@ class MntClienteController extends Controller
      */
     public function index()
     {
-        //
+        $clientes = mnt_cliente::all();
+        return response()->json(["clientes" => $clientes, "mensaje" => "Exito"], 200);
     }
 
     /**
@@ -28,7 +29,24 @@ class MntClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $this->validate($request, [
+                'nombre' => 'required',
+                'descripcion' => 'required',
+                'activo' => 'required',
+                'id_institucion' => 'required',
+            ]);
+            $cliente = new mnt_cliente();
+            $cliente->nombre = $request->nombre;
+            $cliente->descripcion = $request->descripcion;
+            $cliente->activo = $request->activo;
+            $cliente->id_institucion = $request->id_institucion;
+            $cliente->save();
+
+            return response()->json(["mensaje" => "Se creo con exito"], 200);
+        } catch (\Throwable $th) {
+            return response()->json(["mensaje" => "Error al crear", $th->getMessage()], 400);
+        }
     }
 
     /**
@@ -44,22 +62,44 @@ class MntClienteController extends Controller
      */
     public function edit(mnt_cliente $mnt_cliente)
     {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, mnt_cliente $mnt_cliente)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $this->validate($request, [
+                'nombre' => 'required',
+                'descripcion' => 'required',
+                'activo' => 'required',
+                'id_institucion' => 'required',
+            ]);
+            $cliente = mnt_cliente::find($id);
+            $cliente->nombre = $request->nombre;
+            $cliente->descripcion = $request->descripcion;
+            $cliente->activo = $request->activo;
+            $cliente->id_institucion = $request->id_institucion;
+            $cliente->save();
+
+            return response()->json(["mensaje" => "Se actualizo con exito"], 200);
+        } catch (\Throwable $th) {
+            return response()->json(["mensaje" => "Error al actualizar", $th->getMessage()], 400);
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(mnt_cliente $mnt_cliente)
+    public function destroy($id)
     {
-        //
+        try {
+            $cliente = mnt_cliente::find($id);
+            $cliente->delete();
+            return response()->json(["mensaje" => "Se elimino con exito"], 200);
+        } catch (\Throwable $th) {
+            return response()->json(["mensaje" => "Error al eliminar", $th->getMessage()], 400);
+        }
     }
 }
