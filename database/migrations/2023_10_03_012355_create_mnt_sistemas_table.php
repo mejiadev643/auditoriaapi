@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text("nombre");
             $table->text("descripcion");
-            $table->boolean("activo");
+            $table->boolean("activo")->default(1);
             //$table->unsignedBigInteger("id_institucion");
             $table->timestamps();
         });

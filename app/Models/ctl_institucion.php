@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ctl_institucion extends Model
 {
     use HasFactory;
-    protected $table="institucion";
+    protected $table="ctl_institucion";
 
     protected $fillable=[
         'nombre',
@@ -17,12 +17,12 @@ class ctl_institucion extends Model
 
     public function mnt_sistema()
     {
-        return $this->hasMany(mnt_sistema::class);
+        return $this->hasMany(mnt_sistema::class,'id');
     }
 
     public function mnt_cliente()
     {
-        return $this->hasMany(mnt_cliente::class);
+        return $this->hasMany(mnt_cliente::class,'id');
     }
 
 }

@@ -13,15 +13,16 @@ class mnt_sistema extends Model
     protected $fillable=[
         'nombre',
         'descripcion',
+        'id_institucion'
     ];
 
     public function ctl_institucion()
     {
-       return $this->belongsTo(ctl_institucion::class);
+       return $this->belongsTo(ctl_institucion::class,"id");
     }
 
     public function mnt_cliente_key()
     {
-        return $this->hasMany(mnt_cliente_key::class);
+        return $this->hasMany(mnt_cliente_key::class,"id");
     }
 }

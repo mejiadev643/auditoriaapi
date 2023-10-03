@@ -17,20 +17,20 @@ class mnt_cliente extends Model
         'id_institucion',
     ];
 
-    public function mnt_institucion()
+    public function ctl_institucion()
     {
-        return $this->belongsTo(mnt_institucion::class);
+        return $this->belongsTo(ctl_institucion::class,'id');
     }
 
     public function mnt_cliente_key()
     {
-        return $this->hasMany(mnt_cliente_key::class);
+        return $this->hasMany(mnt_cliente_key::class,'id');
     }
 
     public function mnt_json_cliente()
     {
-        return $this->hasMany(mnt_json_cliente::class);
+        return $this->hasMany(mnt_json_cliente::class,'id');
     }
 
-  
+
 }

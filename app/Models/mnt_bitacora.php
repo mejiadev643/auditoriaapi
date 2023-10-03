@@ -21,11 +21,11 @@ class mnt_bitacora extends Model
 
     public function mnt_cliente_key()
     {
-        return $this->belongsTo(mnt_cliente_key::class);
+        return $this->belongsTo(mnt_cliente_key::class,"id");
     }
 
     public function ctl_tipo_bitacora()
     {
-        return $this->belongsTo(ctl_tipo_bitacora::class);
+        return $this->belongsTo(ctl_tipo_bitacora::class,"id");
     }
 }

@@ -16,7 +16,7 @@ class ctl_tipo_bitacora extends Model
 
     public function mnt_bitacora()
     {
-        return $this->hasMany(mnt_bitacora::class);
+        return $this->hasMany(mnt_bitacora::class,"id");
     }
 
 }
