@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mnt_bitacora', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("id_cliente_key");//llave foranea
+            //$table->unsignedBigInteger("id_cliente_key");//llave foranea
             $table->string('direccion_ip', 45);
             $table->string('numero_documento_usuario');
             $table->string('respuesta');

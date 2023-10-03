@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('mnt_cliente_key', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("id_key");//llave foranea
+            $table->string("id_key");//abc
             $table->text("secret_key");
             $table->boolean("activo");
-            $table->unsignedBigInteger("id_permiso");//llave foranea
+            /* $table->unsignedBigInteger("id_permiso");//llave foranea
             $table->unsignedBigInteger("id_sistema");//llave foranea
-            $table->unsignedBigInteger("id_cliente");//llave foranea
+            $table->unsignedBigInteger("id_cliente");//llave foranea */
             $table->timestamps();
         });
     }

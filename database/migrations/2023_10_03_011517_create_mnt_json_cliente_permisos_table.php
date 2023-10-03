@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mnt_json_cliente_permisos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("id_json");
+            //$table->unsignedBigInteger("id_json");
             $table->integer("cantidad_peticiones");
             $table->json("json_campos_permitidos");//pendientes
             $table->timestamps();

@@ -9,4 +9,14 @@ class ctl_tipo_bitacora extends Model
 {
     use HasFactory;
     protected $table="ctl_tipo_bitacora";
+
+    protected $fillable=[
+        'nombre',
+    ];
+
+    public function mnt_bitacora()
+    {
+        return $this->hasMany(mnt_bitacora::class);
+    }
+
 }

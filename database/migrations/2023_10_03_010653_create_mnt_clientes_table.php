@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text("nombre");
             $table->text("descripcion");
             $table->boolean("activo");
-            $table->unsignedBigInteger("id_institucion");//llave foranea
+            //$table->unsignedBigInteger("id_institucion");//llave foranea
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('mnt_json_cliente', function (Blueprint $table) {
             $table->id();
             $table->json('json');//campo de tipo json para almacenar datos json
-            $table->unsignedBigInteger("id_cliente");//llave foranea
+            //$table->unsignedBigInteger("id_cliente");//llave foranea
             $table->timestamps();
         });
     }
