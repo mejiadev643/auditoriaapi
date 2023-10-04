@@ -1,0 +1,1823 @@
+{
+	"info": {
+		"_postman_id": "d6511d34-9a73-42b2-88a6-0061f9301516",
+		"name": "AuditoriaApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28655447"
+	},
+	"item": [
+		{
+			"name": "ctl_Institucion",
+			"item": [
+				{
+					"name": "getInstitucion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/institucion/show",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"institucion",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "storeInstitucion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "eliminar",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "eliminar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/institucion/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"institucion",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show institucion",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/institucion/show/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"institucion",
+								"show",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateInstitucion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "ANSP",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Agencia Nacional",
+									"type": "text"
+								},
+								{
+									"key": "__method",
+									"value": "PATCH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/institucion/update/7",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"institucion",
+								"update",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateInstitucion Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "ANSP",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Agencia Nacional",
+									"type": "text"
+								},
+								{
+									"key": "__method",
+									"value": "PATCH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/institucion/delete/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"institucion",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mnt_cliente",
+			"item": [
+				{
+					"name": "getcliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/cliente/show",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cliente",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "storecliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "Pepe",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "El  pepe",
+									"type": "text"
+								},
+								{
+									"key": "id_institucion",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/cliente/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cliente",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/cliente/show/10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cliente",
+								"show",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "etesech",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "etesech",
+									"type": "text"
+								},
+								{
+									"key": "id_institucion",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/cliente/update/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cliente",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "ANSP",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Agencia Nacional",
+									"type": "text"
+								},
+								{
+									"key": "__method",
+									"value": "PATCH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/cliente/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cliente",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mnt_sistema",
+			"item": [
+				{
+					"name": "get sistema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/sistema/show",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"sistema",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store sistema",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "CHL",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Me lo invente, perdon XD",
+									"type": "text"
+								},
+								{
+									"key": "id_institucion",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/sistema/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"sistema",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show sistema",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/sistema/show/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"sistema",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update sistema",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "infonavit",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "las del meme de facebook",
+									"type": "text"
+								},
+								{
+									"key": "id_institucion",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/sistema/update/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"sistema",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "ANSP",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Agencia Nacional",
+									"type": "text"
+								},
+								{
+									"key": "__method",
+									"value": "PATCH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/sistema/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"sistema",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ctl_tipo_bitacora",
+			"item": [
+				{
+					"name": "get tipo bitacora",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/tipobitacora/show",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"tipobitacora",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store tipo bitacora",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "clonazepan",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/tipobitacora/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"tipobitacora",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show tipo bitacora",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/tipobitacora/show/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"tipobitacora",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update tipo bitacora",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "edicion y eliminacion",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "las del meme de facebook",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id_institucion",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/tipobitacora/update/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"tipobitacora",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tipo bitacora",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "ANSP",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Agencia Nacional",
+									"type": "text"
+								},
+								{
+									"key": "__method",
+									"value": "PATCH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/tipobitacora/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"tipobitacora",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mnt_json_cliente",
+			"item": [
+				{
+					"name": "get json cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/jsoncliente/show",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"jsoncliente",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store json cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "json",
+									"value": "[{\"nombre\":\"pruebaexitosa\",\"created_at\":\"2023-10-03T14:40:01.000000Z\",\"updated_at\":\"2023-10-03T14:40:01.000000Z\"},{\"nombre\":\"consulta2\",\"created_at\":\"2023-10-03T14:40:01.000000Z\",\"updated_at\":\"2023-10-03T14:40:01.000000Z\"},{\"nombre\":\"consulta3\",\"created_at\":\"2023-10-03T14:40:01.000000Z\",\"updated_at\":\"2023-10-03T14:40:01.000000Z\"},{\"nombre\":\"consulta4\",\"created_at\":\"2023-10-03T14:40:01.000000Z\",\"updated_at\":\"2023-10-03T14:40:01.000000Z\"}]",
+									"type": "text"
+								},
+								{
+									"key": "id_cliente",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/jsoncliente/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"jsoncliente",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store json cliente objeto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "json",
+									"value": "{\"id\":1,\"nombre\":\"ISSS\",\"descripcion\":\"Instituto salvadore\\u00f1o del seguro social\",\"created_at\":\"2023-10-03T09:29:47.000000Z\",\"updated_at\":\"2023-10-03T09:29:47.000000Z\"}",
+									"type": "text"
+								},
+								{
+									"key": "id_cliente",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/jsoncliente/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"jsoncliente",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show json cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/jsoncliente/show/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"jsoncliente",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update json cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "json",
+									"value": "{\"id\":1,\"nombre\":\"ISSS\",\"descripcion\":\"Instituto salvadore\\u00f1o del seguro social\",\"created_at\":\"2023-10-03T09:29:47.000000Z\",\"updated_at\":\"2023-10-03T09:29:47.000000Z\"}",
+									"type": "text"
+								},
+								{
+									"key": "id_cliente",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_institucion",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/jsoncliente/update/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"jsoncliente",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete json cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "ANSP",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Agencia Nacional",
+									"type": "text"
+								},
+								{
+									"key": "__method",
+									"value": "PATCH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/sistema/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"sistema",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mnt_cliente_permisos",
+			"item": [
+				{
+					"name": "get permisoscliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/permisoscliente/show",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"permisoscliente",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store json cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "json_campos_permitidos",
+									"value": "[{\"Permisos\":\"leer y cantar\",\"created_at\":\"2023-10-03T14:40:01.000000Z\",\"updated_at\":\"2023-10-03T14:40:01.000000Z\"},{\"nombre\":\"consulta2\",\"created_at\":\"2023-10-03T14:40:01.000000Z\",\"updated_at\":\"2023-10-03T14:40:01.000000Z\"},{\"nombre\":\"consulta3\",\"created_at\":\"2023-10-03T14:40:01.000000Z\",\"updated_at\":\"2023-10-03T14:40:01.000000Z\"},{\"nombre\":\"consulta4\",\"created_at\":\"2023-10-03T14:40:01.000000Z\",\"updated_at\":\"2023-10-03T14:40:01.000000Z\"}]",
+									"type": "text"
+								},
+								{
+									"key": "id_json",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cantidad_peticiones",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/permisoscliente/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"permisoscliente",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show json cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/permisoscliente/show/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"permisoscliente",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update json cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_json",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cantidad_peticiones",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "json_campos_permitidos",
+									"value": "[{\"permiso\": \"leer\"}, {\"permiso\": \"editar\"}]",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/permisoscliente/update/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"permisoscliente",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete json cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "__method",
+									"value": "PATCH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/sistema/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"sistema",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mnt_cliente_key",
+			"item": [
+				{
+					"name": "get cliente key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/clientekey/show",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"clientekey",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store cliente key",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_key",
+									"value": "12313",
+									"type": "text"
+								},
+								{
+									"key": "secret_key",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_permiso",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_sistema",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_cliente",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/clientekey/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"clientekey",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show cliente key",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/clientekey/show/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"clientekey",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update cliente key",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_key",
+									"value": "12345677999",
+									"type": "text"
+								},
+								{
+									"key": "secret_key",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_permiso",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_sistema",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_cliente",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/clientekey/update/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"clientekey",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete cliente key",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "ANSP",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Agencia Nacional",
+									"type": "text"
+								},
+								{
+									"key": "__method",
+									"value": "PATCH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/clientekey/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"clientekey",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mnt_bitacora",
+			"item": [
+				{
+					"name": "get bitacora",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/bitacora/show",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"bitacora",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store bitacora",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_cliente_key",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "numero_documento_usuario",
+									"value": "823832832984-9",
+									"type": "text"
+								},
+								{
+									"key": "ip_sistema",
+									"value": "::bc24",
+									"type": "text"
+								},
+								{
+									"key": "respuesta",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_tipo_bitacora",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/bitacora/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"bitacora",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show bitacora",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/bitacora/show/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"bitacora",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update bitacora",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_cliente_key",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "numero_documento_usuario",
+									"value": "823832832984-0",
+									"type": "text"
+								},
+								{
+									"key": "ip_sistema",
+									"value": "::bc30",
+									"type": "text"
+								},
+								{
+									"key": "respuesta",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id_tipo_bitacora",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/bitacora/update/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"bitacora",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete cliente key",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "ANSP",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Agencia Nacional",
+									"type": "text"
+								},
+								{
+									"key": "__method",
+									"value": "PATCH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/clientekey/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"clientekey",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

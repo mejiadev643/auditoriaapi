@@ -14,7 +14,7 @@ class mnt_json_cliente extends Model
     ];
     protected $fillable=[
         'json',
-        'id_cliente',
+        'id_cliente'
     ];
 
     public function mnt_cliente()

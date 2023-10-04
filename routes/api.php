@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\CtlInstitucionController;
 use App\Http\Controllers\CtlTipoBitacoraController;
+use App\Http\Controllers\MntBitacoraController;
 use App\Http\Controllers\MntClienteController;
+use App\Http\Controllers\MntClienteKeyController;
 use App\Http\Controllers\MntJsonClienteController;
+use App\Http\Controllers\MntJsonClientePermisoController;
 use App\Http\Controllers\MntSistemaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -62,4 +65,28 @@ Route::prefix('/jsoncliente')->group(function () {
     Route::get("/show/{id}",[MntJsonClienteController::class,"show"])->name("jsoncliente.edit");
     Route::post("/update/{id}",[MntJsonClienteController::class,"update"])->name("jsoncliente.update");
     Route::get("/delete/{id}",[MntJsonClienteController::class,"destroy"])->name("jsoncliente.delete");
+});
+
+Route::prefix('/permisoscliente')->group(function () {
+    Route::get("/show",[MntJsonClientePermisoController::class,"index"])->name("clientepermiso.show");
+    Route::post("/store",[MntJsonClientePermisoController::class,"store"])->name("clientepermiso.store");
+    Route::get("/show/{id}",[MntJsonClientePermisoController::class,"show"])->name("clientepermiso.edit");
+    Route::post("/update/{id}",[MntJsonClientePermisoController::class,"update"])->name("clientepermiso.update");
+    Route::get("/delete/{id}",[MntJsonClientePermisoController::class,"destroy"])->name("clientepermiso.delete");
+});
+
+Route::prefix('/clientekey')->group(function () {
+    Route::get("/show",[MntClienteKeyController::class,"index"])->name("clientekey.show");
+    Route::post("/store",[MntClienteKeyController::class,"store"])->name("clientekey.store");
+    Route::get("/show/{id}",[MntClienteKeyController::class,"show"])->name("clientekey.edit");
+    Route::post("/update/{id}",[MntClienteKeyController::class,"update"])->name("clientekey.update");
+    Route::get("/delete/{id}",[MntClienteKeyController::class,"destroy"])->name("clientekey.delete");
+});
+
+Route::prefix('/bitacora')->group(function () {
+    Route::get("/show",[MntBitacoraController::class,"index"])->name("bitacora.show");
+    Route::post("/store",[MntBitacoraController::class,"store"])->name("bitacora.store");
+    Route::get("/show/{id}",[MntBitacoraController::class,"show"])->name("bitacora.edit");
+    Route::post("/update/{id}",[MntBitacoraController::class,"update"])->name("bitacora.update");
+    Route::get("/delete/{id}",[MntBitacoraController::class,"destroy"])->name("bitacora.delete");
 });

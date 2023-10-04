@@ -21,22 +21,22 @@ class mnt_cliente_key extends Model
 
     public function mnt_json_cliente_permisos()
     {
-        return $this->belongsTo(mnt_json_cliente_permisos::class);
+        return $this->belongsTo(mnt_json_cliente_permiso::class,'id');
     }
 
     public function mnt_sistema()
     {
-        return $this->belongsTo(mnt_sistema::class);
+        return $this->belongsTo(mnt_sistema::class,'id');
     }
 
     public function mnt_cliente()
     {
-        return $this->belongsTo(mnt_cliente::class);
+        return $this->belongsTo(mnt_cliente::class,'id');
     }
 
     public function mnt_bitacora()
     {
-        return $this->hasMany(mnt_bitacora::class);
+        return $this->hasMany(mnt_bitacora::class,'id');
     }
 
 }

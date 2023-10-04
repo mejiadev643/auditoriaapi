@@ -14,7 +14,7 @@ class MntSistemaController extends Controller
     {
         //
         $cliente = mnt_sistema::with('ctl_institucion')->get();
-        return response()->json($cliente);
+        return response()->json(["status"=>"ok","data"=>$cliente],200);
     }
 
 
@@ -30,8 +30,12 @@ class MntSistemaController extends Controller
             'id_institucion'=>'required'
         ]);
 
-        $store= mnt_sistema::create($validate);
-        return response()->json($store,200);
+        try {
+            $store= mnt_sistema::create($validate);
+        } catch (\Throwable $th) {
+            return response()->json(["status"=>"ok","data"=>$th],419);
+        }
+        return response()->json(["status"=>"ok","data"=>$store],200);
     }
 
     /**
@@ -43,10 +47,10 @@ class MntSistemaController extends Controller
         $mnt_sistema = mnt_sistema::with('ctl_institucion')->findorfail($id);
 
         } catch (\Throwable $th) {
-            return response()->json("Error, no se ha podido encontrar el dato solicitado",200);
+            return response()->json(["status"=>"ok","data"=>$th],419);
         }
 
-        return response()->json($mnt_sistema,200);
+        return response()->json(["status"=>"ok","data"=>$mnt_sistema],200);
     }
 
 
@@ -61,7 +65,6 @@ class MntSistemaController extends Controller
             'descripcion'=>'required',
             'id_institucion'=>'required'
         ]);
-        //['nombre',=>"pepe",'desccripcion",=>'descripcion']
 
         $mnt_sistema= mnt_sistema::find($id_mnt_sistema);
 
@@ -72,9 +75,9 @@ class MntSistemaController extends Controller
                 'id_institucion' => $validate['id_institucion']
             ]);
         }catch(\Throwable $th){
-            return response()->json("Error No se pudo ejecutar la operación en la base de datos",200);
+            return response()->json(["status"=>"ok","data"=>$th],419);
         }
-        return response()->json($mnt_sistema,200);
+        return response()->json(["status"=>"ok","data"=>$mnt_sistema],200);
 
     }
 
@@ -87,9 +90,9 @@ class MntSistemaController extends Controller
         try {
             $mnt_sistema->delete();
         } catch (\Throwable $th) {
-            return response()->json("Error, no se ha podido eliminar el dato",200);
+            return response()->json(["status"=>"ok","data"=>$th],419);
         }
 
-            return response()->json($mnt_sistema,200);
+        return response()->json(["status"=>"ok","data"=>$mnt_sistema],200);
     }
 }

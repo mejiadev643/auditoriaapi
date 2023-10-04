@@ -16,7 +16,7 @@ class CtlInstitucionController extends Controller
     {
         //
         $institucion= ctl_institucion::all();
-        return response()->json($institucion);
+        return response()->json(["status"=>"ok","data"=>$institucion],200);
     }
 
 
@@ -30,8 +30,13 @@ class CtlInstitucionController extends Controller
             'nombre'=>'required',
             'descripcion'=>'required'
         ]);
-        $store= ctl_institucion::create($validate);
-        return response()->json($store,200);
+        try {
+            $store= ctl_institucion::create($validate);
+        } catch (\Throwable $th) {
+            return response()->json(["status"=>"error","data"=>$th],419);
+
+        }
+        return response()->json(["status"=>"ok","data"=>$store],200);
     }
 
     /**
@@ -43,10 +48,10 @@ class CtlInstitucionController extends Controller
         $ctl_institucion= ctl_institucion::findorfail($id);
 
         } catch (\Throwable $th) {
-            return response()->json("Error, no se ha podido encontrar el dato solicitado",200);
+            return response()->json(["status"=>"error","data"=>$th],419);
         }
 
-        return response()->json($ctl_institucion,200);
+        return response()->json(["status"=>"ok","data"=>$ctl_institucion],200);
     }
 
 
@@ -68,9 +73,9 @@ class CtlInstitucionController extends Controller
                 'descripcion' => $validate['descripcion']
             ]);
         }catch(\Throwable $th){
-            return response()->json("Error No se pudo ejecutar la operación en la base de datos",200);
+        return response()->json(["status"=>"error","data"=>$th],419);
         }
-        return response()->json($ctl_institucion,200);
+        return response()->json(["status"=>"ok","data"=>$ctl_institucion],200);
 
     }
 
@@ -83,9 +88,10 @@ class CtlInstitucionController extends Controller
         try {
             $ctl_institucion->delete();
         } catch (\Throwable $th) {
-            return response()->json("Error, no se ha podido eliminar el dato",200);
+            return response()->json(["status"=>"error","data"=>$th],419);
+
         }
 
-            return response()->json($ctl_institucion,200);
+        return response()->json(["status"=>"ok","data"=>$ctl_institucion],200);
     }
 }

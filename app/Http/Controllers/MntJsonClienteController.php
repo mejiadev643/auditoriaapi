@@ -14,8 +14,8 @@ class MntJsonClienteController extends Controller
     {
         //
         $json_cliente = mnt_json_cliente::all();
-        
-        return response()->json($json_cliente);
+
+        return response()->json(["status"=>"ok","data"=>$json_cliente],200);
     }
 
 
@@ -25,20 +25,30 @@ class MntJsonClienteController extends Controller
     public function store(Request $request)
     {
         //
+        //return $request->json;
         $validate = $request->validate([
-            'json' => 'required|json',
+            'json' => 'required',
             'id_cliente' => 'required'
         ]);
+        //return $validate;
+
+
         $jsonCliente = new mnt_json_cliente();
         //$jsonCliente->json = json_encode($validate['json']);
-        $jsonCliente->json =$validate['json'];
+        $jsonCliente->json =json_decode($request->json);
         $jsonCliente->id_cliente = $validate['id_cliente'];
-        //dd($jsonCliente);
+        //return json_decode($request->json);
 
-        $jsonCliente->save();
+
+        try {
+            $jsonCliente->save();
+        } catch (\Throwable $th) {
+            return response()->json(["status"=>"error","data"=>$th],419);
+
+        }
 
     // Devuelve una respuesta JSON con el modelo almacenado
-        return response()->json($jsonCliente, 200);
+        return response()->json(["status"=>"ok","data"=>$jsonCliente],200);
     }
 
     /**
@@ -47,13 +57,14 @@ class MntJsonClienteController extends Controller
     public function show($id)
     {
         try {
-        $mnt_json_cliente = mnt_json_cliente::with('ctl_institucion')->findorfail($id);
+        $mnt_json_cliente = mnt_json_cliente::findorfail($id);
 
         } catch (\Throwable $th) {
             return response()->json("Error, no se ha podido encontrar el dato solicitado",200);
+            return response()->json(["status"=>"error","data"=>$th],419);
         }
 
-        return response()->json($mnt_json_cliente,200);
+        return response()->json(["status"=>"ok","data"=>$mnt_json_cliente],200);
     }
 
 
@@ -63,10 +74,9 @@ class MntJsonClienteController extends Controller
     //public function update(Request $request, $id_mnt_json_cliente)
     public function update(Request $request, $id_mnt_json_cliente)
     {
-        $validate= $request->validate([
-            'nombre'=>'required',
-            'descripcion'=>'required',
-            'id_institucion'=>'required'
+        $validate = $request->validate([
+            'json' => 'required',
+            'id_cliente' => 'required'
         ]);
         //['nombre',=>"pepe",'desccripcion",=>'descripcion']
 
@@ -74,14 +84,13 @@ class MntJsonClienteController extends Controller
 
         try{
             $mnt_json_cliente->update([
-                'nombre' => $validate['nombre'],
-                'descripcion' => $validate['descripcion'],
-                'id_institucion' => $validate['id_institucion']
+                'json' => json_decode($request->json),
+                'id_cliente' => $validate['id_cliente']
             ]);
         }catch(\Throwable $th){
             return response()->json("Error No se pudo ejecutar la operación en la base de datos",200);
         }
-        return response()->json($mnt_json_cliente,200);
+        return response()->json(["status"=>"ok","data"=>$mnt_json_cliente],200);
 
     }
 
@@ -97,6 +106,6 @@ class MntJsonClienteController extends Controller
             return response()->json("Error, no se ha podido eliminar el dato",200);
         }
 
-            return response()->json($mnt_json_cliente,200);
+        return response()->json(["status"=>"ok","data"=>$mnt_json_cliente],200);
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("id_key");//abc
             $table->text("secret_key");
-            $table->boolean("activo");
+            $table->boolean("activo")->default(1);
             /* $table->unsignedBigInteger("id_permiso");//llave foranea
             $table->unsignedBigInteger("id_sistema");//llave foranea
             $table->unsignedBigInteger("id_cliente");//llave foranea */

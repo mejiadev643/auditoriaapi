@@ -14,7 +14,7 @@ class CtlTipoBitacoraController extends Controller
     {
         //
         $cliente = ctl_tipo_bitacora::all();
-        return response()->json($cliente);
+            return response()->json(["status"=>"ok","data"=>$cliente],200);
     }
 
 
@@ -28,8 +28,13 @@ class CtlTipoBitacoraController extends Controller
             'nombre'=>'required'
         ]);
 
-        $store= ctl_tipo_bitacora::create($validate);
-        return response()->json($store,200);
+        try {
+            $store= ctl_tipo_bitacora::create($validate);
+        } catch (\Throwable $th) {
+            return response()->json(["status"=>"error","data"=>$th],419);
+
+        }
+            return response()->json(["status"=>"ok","data"=>$store],200);
     }
 
     /**
@@ -41,10 +46,10 @@ class CtlTipoBitacoraController extends Controller
         $ctl_tipo_bitacora = ctl_tipo_bitacora::findorfail($id);
 
         } catch (\Throwable $th) {
-            return response()->json("Error, no se ha podido encontrar el dato solicitado",200);
+            return response()->json(["status"=>"error","data"=>$th],419);
         }
 
-        return response()->json($ctl_tipo_bitacora,200);
+            return response()->json(["status"=>"ok","data"=>$ctl_tipo_bitacora],200);
     }
 
 
@@ -57,7 +62,6 @@ class CtlTipoBitacoraController extends Controller
         $validate= $request->validate([
             'nombre'=>'required'
         ]);
-        //['nombre',=>"pepe",'desccripcion",=>'descripcion']
 
         $ctl_tipo_bitacora= ctl_tipo_bitacora::find($id_ctl_tipo_bitacora);
 
@@ -66,9 +70,9 @@ class CtlTipoBitacoraController extends Controller
                 'nombre' => $validate['nombre']
             ]);
         }catch(\Throwable $th){
-            return response()->json("Error No se pudo ejecutar la operación en la base de datos",200);
+            return response()->json(["status"=>"error","data"=>$th],419);
         }
-        return response()->json($ctl_tipo_bitacora,200);
+            return response()->json(["status"=>"ok","data"=>$ctl_tipo_bitacora],200);
 
     }
 
@@ -81,10 +85,10 @@ class CtlTipoBitacoraController extends Controller
         try {
             $ctl_tipo_bitacora->delete();
         } catch (\Throwable $th) {
-            return response()->json("Error, no se ha podido eliminar el dato",200);
+            return response()->json(["status"=>"error","data"=>$th],419);
         }
 
-            return response()->json($ctl_tipo_bitacora,200);
+            return response()->json(["status"=>"ok","data"=>$ctl_tipo_bitacora],200);
     }
 }
 

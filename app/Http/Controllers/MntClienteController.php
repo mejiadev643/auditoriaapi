@@ -14,7 +14,7 @@ class MntClienteController extends Controller
     {
         //
         $cliente = mnt_cliente::with('ctl_institucion')->get();
-        return response()->json($cliente);
+        return response()->json(["status"=>"ok","data"=>$cliente],200);
     }
 
 
@@ -30,8 +30,14 @@ class MntClienteController extends Controller
             'id_institucion'=>'required'
         ]);
 
-        $store= mnt_cliente::create($validate);
-        return response()->json($store,200);
+        try {
+            $store= mnt_cliente::create($validate);
+
+        } catch (\Throwable $th) {
+            return response()->json(["status"=>"error","data"=>$th],419);
+        }
+        return response()->json(["status"=>"ok","data"=>$store],200);
+
     }
 
     /**
@@ -43,10 +49,10 @@ class MntClienteController extends Controller
         $mnt_cliente = mnt_cliente::with('ctl_institucion')->findorfail($id);
 
         } catch (\Throwable $th) {
-            return response()->json("Error, no se ha podido encontrar el dato solicitado",200);
+            return response()->json(["status"=>"error","data"=>$th],419);
         }
 
-        return response()->json($mnt_cliente,200);
+        return response()->json(["status"=>"ok","data"=>$mnt_cliente],200);
     }
 
 
@@ -72,9 +78,9 @@ class MntClienteController extends Controller
                 'id_institucion' => $validate['id_institucion']
             ]);
         }catch(\Throwable $th){
-            return response()->json("Error No se pudo ejecutar la operación en la base de datos",200);
+            return response()->json(["status"=>"error","data"=>$th],419);
         }
-        return response()->json($mnt_cliente,200);
+        return response()->json(["status"=>"ok","data"=>$mnt_cliente],200);
 
     }
 
@@ -87,9 +93,9 @@ class MntClienteController extends Controller
         try {
             $mnt_cliente->delete();
         } catch (\Throwable $th) {
-            return response()->json("Error, no se ha podido eliminar el dato",200);
+            return response()->json(["status"=>"error","data"=>$th],419);
         }
 
-            return response()->json($mnt_cliente,200);
+        return response()->json(["status"=>"ok","data"=>$mnt_cliente],200);
     }
 }
