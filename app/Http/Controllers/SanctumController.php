@@ -18,7 +18,7 @@ class SanctumController extends Controller
 
         if (Auth::attempt($credentials)) {
             $user = User::where('email', $request->email)->first();
-            $token = $user->createToken('token-name')->plainTextToken;
+            $token = $user->createToken($user->name)->plainTextToken;
             return response()->json(['token' => $token], 200);
         } else {
             return response()->json(['message' => 'Invalid credentials'], 401);
