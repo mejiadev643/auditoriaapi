@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\TokenList;
 
 class SanctumController extends Controller
 {
@@ -19,6 +20,12 @@ class SanctumController extends Controller
         if (Auth::attempt($credentials)) {
             $user = User::where('email', $request->email)->first();
             $token = $user->createToken($user->name)->plainTextToken;
+            TokenList::create([
+                'id_user'=>$user->id,
+                'name'=>$user->name,
+                'token_key'=>$token,
+            ]);//guardar el token creado para propositos futuros
+
             return response()->json(['token' => $token], 200);
         } else {
             return response()->json(['message' => 'Invalid credentials'], 401);
@@ -38,8 +45,11 @@ class SanctumController extends Controller
                 //$token = $user->createToken("example");
                 Auth::attempt($data);
                 Auth::user();
+                $token = TokenList::where('id_user',$user->id)->get();//retorna los token que genero el usuario
 
-                $response = "ok";
+                #$response = "ok";
+                return response()->json(["status"=>"ok","user"=>$user,"TokenList"=>$token]);
+
 
             }else{
                 $response= "error, doesn't have a token valid";
