@@ -36,7 +36,9 @@ class SanctumController extends Controller
     {
 
         $data = ['email'=>$request['email'],'password'=>$request['password']];
-        $user = User::where('email',$data['email'])->first();//admin@admin.com
+        //$user = User::where('email',$data['email'])->first();//admin@admin.com
+        $user = User::where('email', $data['email'])->select('id', 'name', 'email','password')->first();
+
 
         if($user){
 
@@ -45,7 +47,7 @@ class SanctumController extends Controller
                 //$token = $user->createToken("example");
                 Auth::attempt($data);
                 Auth::user();
-                $token = TokenList::where('id_user',$user->id)->get();//retorna los token que genero el usuario
+                $token = TokenList::where('id_user',$user->id)->select('id','id_user','name','token_key')->get();//retorna los token que genero el usuario
 
                 #$response = "ok";
                 return response()->json(["status"=>"ok","user"=>$user,"TokenList"=>$token]);
